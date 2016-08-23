@@ -11,6 +11,7 @@ public class Lenguages {
 
     @SerializedName("ls")
     private ArrayList ls;
+
     @SerializedName("message")
     private String message;
     @SerializedName("response_code")

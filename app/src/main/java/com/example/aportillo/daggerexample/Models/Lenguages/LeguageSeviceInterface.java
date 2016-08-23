@@ -8,6 +8,6 @@ import retrofit2.http.GET;
  */
 public interface LeguageSeviceInterface {
 
-    @GET("vw77/")
+    @GET("3rorv")
     Call<Lenguages> getLenguages();
 }

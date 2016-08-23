@@ -5,8 +5,6 @@ import android.util.Log;
 import com.example.aportillo.daggerexample.Models.Lenguages.LeguageSeviceInterface;
 import com.example.aportillo.daggerexample.Models.ServiceInterface;
 
-import javax.inject.Inject;
-
 import retrofit2.Call;
 
 /**
@@ -17,7 +15,7 @@ public class LenguagesServices<T> extends BaseService {
 
     private LeguageSeviceInterface languageSeviceInterface;
 
-    @Inject
+
     public ServiceGenerator serviceGenerator;
 
     public LenguagesServices() {
@@ -27,9 +25,10 @@ public class LenguagesServices<T> extends BaseService {
 
     public void getLenguageServicesI(ServiceInterface<T> serviceInterface, T t) throws Exception {
         try {
+
             serviceGenerator = new ServiceGenerator();
             this.languageSeviceInterface = getRetrofit().create(LeguageSeviceInterface.class);
-            Call<T> aCall = (Call<T>) this.languageSeviceInterface.getLenguages();
+            Call<T> aCall = (Call<T>)  this.languageSeviceInterface.getLenguages();
             serviceGenerator.response(aCall, serviceInterface);
         } catch (Exception e) {
             Log.e("Error", getClass().getSimpleName() + ":" + e.getMessage());

@@ -4,8 +4,10 @@ package com.example.aportillo.daggerexample.ui;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import com.example.aportillo.daggerexample.Presenter.MainPresenterImpl;
+import com.example.aportillo.daggerexample.Models.Main.MainInterface;
+import com.example.aportillo.daggerexample.Presenter.MainPresenter;
 import com.example.aportillo.daggerexample.R;
 
 import javax.inject.Inject;
@@ -16,13 +18,16 @@ import butterknife.InjectView;
 /**
  * Created by aportillo on 18/08/2016.
  */
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements MainInterface {
 
     @InjectView(R.id.button)
     Button button;
 
+    @InjectView(R.id.textView)
+    TextView textView;
+
     @Inject
-    MainPresenterImpl mainPresenterImpl;
+    MainPresenter mainPresenterImpl;
 
 
     @Override
@@ -31,7 +36,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         getSystemComponent().inject(this);
         ButterKnife.inject(this);
-       // button = (Button) findViewById(R.id.button);
+        // button = (Button) findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,8 +47,13 @@ public class MainActivity extends BaseActivity {
     }
 
 
-   public void loadLenguages() {
-       mainPresenterImpl.loadLenguages();
+    public void loadLenguages() {
+        mainPresenterImpl.loadLenguages();
     }
 
+
+    @Override
+    public void setTextView(String text) {
+        textView.setText(text);
+    }
 }

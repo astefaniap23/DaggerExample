@@ -1,18 +1,26 @@
 package com.example.aportillo.daggerexample.Services;
 
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BaseService {
 
-    private String baseUrl="http://myjson.com/";
+    private String baseUrl="https://api.myjson.com/bins/";
     private Retrofit retrofit;
+
+    Gson gson = new GsonBuilder()
+            .setLenient()
+            .create();
+
 
     public BaseService() {
         this.retrofit = new Retrofit.Builder()
-                .baseUrl(this.getBaseUrl())
-                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(this.baseUrl)
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
     }
 
