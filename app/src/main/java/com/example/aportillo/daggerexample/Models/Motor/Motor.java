@@ -1,4 +1,4 @@
-package com.example.aportillo.daggerexample.Model;
+package com.example.aportillo.daggerexample.Models.Motor;
 
 /**
  * Created by aportillo on 16/08/2016.

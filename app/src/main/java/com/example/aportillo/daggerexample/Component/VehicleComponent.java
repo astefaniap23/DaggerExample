@@ -1,7 +1,8 @@
 package com.example.aportillo.daggerexample.Component;
 
-import com.example.aportillo.daggerexample.Model.Vehicle;
-import com.example.aportillo.daggerexample.Module.VehicleModule;
+
+import com.example.aportillo.daggerexample.Models.Vehicle.Vehicle;
+import com.example.aportillo.daggerexample.Models.Vehicle.VehicleModule;
 
 import javax.inject.Singleton;
 

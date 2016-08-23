@@ -1,7 +1,7 @@
-package com.example.aportillo.daggerexample.Module;
+package com.example.aportillo.daggerexample.Models.Vehicle;
 
-import com.example.aportillo.daggerexample.Model.Motor;
-import com.example.aportillo.daggerexample.Model.Vehicle;
+
+import com.example.aportillo.daggerexample.Models.Motor.Motor;
 
 import javax.inject.Singleton;
 

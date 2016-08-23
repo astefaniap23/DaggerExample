@@ -1,6 +1,6 @@
-package com.example.aportillo.daggerexample.Model;
+package com.example.aportillo.daggerexample.Models.Vehicle;
 
-import javax.inject.Inject;
+import com.example.aportillo.daggerexample.Models.Motor.Motor;
 
 /**
  * Created by aportillo on 16/08/2016.
@@ -8,7 +8,7 @@ import javax.inject.Inject;
 public class Vehicle {
     private Motor motor;
 
-    @Inject
+
     public Vehicle(Motor motor) {
         this.motor = motor;
     }
