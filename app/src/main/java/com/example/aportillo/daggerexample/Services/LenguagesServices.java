@@ -12,20 +12,20 @@ import retrofit2.Call;
 /**
  * Created by aportillo on 18/08/2016.
  */
-public class LenguagesServices<T> extends BaseServices {
+public class LenguagesServices<T> extends BaseService {
+
 
     private LeguageSeviceInterface languageSeviceInterface;
 
     @Inject
     public ServiceGenerator serviceGenerator;
 
-    @Inject
     public LenguagesServices() {
         super();
         this.languageSeviceInterface = getRetrofit().create(LeguageSeviceInterface.class);
     }
 
-    public void getLanguageServicesI(ServiceInterface<T> serviceInterface, T t) throws Exception {
+    public void getLenguageServicesI(ServiceInterface<T> serviceInterface, T t) throws Exception {
         try {
             serviceGenerator = new ServiceGenerator();
             this.languageSeviceInterface = getRetrofit().create(LeguageSeviceInterface.class);

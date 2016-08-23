@@ -21,18 +21,4 @@ public class SystemModule {
     }
 
 
-  /*   @Singleton
-    @Provides
-    SharedPreferences providePreferenceManager() {
-        return PreferenceManager.getDefaultSharedPreferences(application);
-    }
-
-   @Singleton
-    @Provides
-    ConnectivityManager provideConnectivityManager() {
-        return (ConnectivityManager) application.getSystemService(Context.CONNECTIVITY_SERVICE);
-    }*/
-
-
-
 }

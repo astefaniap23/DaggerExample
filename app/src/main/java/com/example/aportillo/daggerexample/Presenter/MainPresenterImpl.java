@@ -1,7 +1,7 @@
 package com.example.aportillo.daggerexample.Presenter;
 
 import com.example.aportillo.daggerexample.Models.Lenguages.Lenguages;
-import com.example.aportillo.daggerexample.Models.MainPresenterInterface;
+import com.example.aportillo.daggerexample.Models.Main.MainPresenterInterface;
 import com.example.aportillo.daggerexample.Models.ServiceInterface;
 import com.example.aportillo.daggerexample.Services.LenguagesServices;
 import com.example.aportillo.daggerexample.Util.Logger;
@@ -16,18 +16,19 @@ public class MainPresenterImpl implements MainPresenterInterface {
     @Inject
     Logger logger;
 
-    LenguagesServices lenguagesServices;
-    MainActivity mainActivity;
+    private LenguagesServices lenguagesServices;
+    private MainActivity mainActivity;
 
     @Inject
-    public MainPresenterImpl(MainActivity mainActivity) {
+    public MainPresenterImpl(MainActivity mainActivity,LenguagesServices lenguagesServices) {
         this.mainActivity = mainActivity;
+        this.lenguagesServices = lenguagesServices;
     }
 
     @Override
     public void loadLenguages() {
-        try {
-            lenguagesServices.getLanguageServicesI(new ServiceInterface<Lenguages>() {
+       try {
+           lenguagesServices.getLenguageServicesI(new ServiceInterface<Lenguages>() {
                 @Override
                 public void onSuccess(Lenguages value) {
                     logger.log("onSuccess.value" + String.valueOf(value));

@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BaseService {
 
-    private String baseUrl="http://myjson.com/vw77/";
+    private String baseUrl="http://myjson.com/";
     private Retrofit retrofit;
 
     public BaseService() {

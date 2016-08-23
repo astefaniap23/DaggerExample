@@ -24,19 +24,14 @@ public class MainActivity extends BaseActivity {
     @Inject
     MainPresenterImpl mainPresenterImpl;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSystemComponent().inject(this);
         ButterKnife.inject(this);
-        button = (Button) findViewById(R.id.button);
-
-
-        /*  VehicleComponent component = DaggerVehicleComponent.builder().vehicleModule(new VehicleModule()).build();
-        vehicle = component.provideVehicle();*/
-
-        //Toast.makeText(this, String.valueOf(vehicle.getSpeed()), Toast.LENGTH_SHORT).show();
+       // button = (Button) findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

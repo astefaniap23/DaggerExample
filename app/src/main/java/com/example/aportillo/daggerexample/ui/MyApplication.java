@@ -25,16 +25,4 @@ public class MyApplication extends Application {
         return this.systemComponent;
     }
 
-  /*  public UserComponent createUserComponent(User user) {
-        userComponent = systemComponent.plus(new UserModule(user));
-        return userComponent;
-    }
-
-    public void releaseUserComponent() {
-        userComponent = null;
-    }
-
-    public UserComponent getUserComponent() {
-        return userComponent;
-    }*/
 }
