@@ -1,9 +1,10 @@
 package com.example.aportillo.daggerexample.Presenter;
 
-import com.example.aportillo.daggerexample.Models.Lenguages.Lenguages;
+import com.example.aportillo.daggerexample.Models.Lenguages.Lenguage;
 import com.example.aportillo.daggerexample.Models.Main.MainPresenterInterface;
 import com.example.aportillo.daggerexample.Models.ServiceInterface;
 import com.example.aportillo.daggerexample.Services.LenguagesServices;
+import com.example.aportillo.daggerexample.Util.Constans;
 import com.example.aportillo.daggerexample.Util.Logger;
 import com.example.aportillo.daggerexample.ui.MainActivity;
 
@@ -15,6 +16,9 @@ import javax.inject.Inject;
 public class MainPresenter implements MainPresenterInterface {
     @Inject
     Logger logger;
+
+    @Inject
+    Constans constans;
 
     private LenguagesServices lenguagesServices;
     private MainActivity mainActivity;
@@ -31,23 +35,31 @@ public class MainPresenter implements MainPresenterInterface {
     }
 
 
-        @Override
+    @Override
     public void loadLenguages() {
-       try {
-           lenguagesServices.getLenguageServicesI(new ServiceInterface<Lenguages>() {
+        try {
+            lenguagesServices.getLenguageServicesI(new ServiceInterface<Lenguage>() {
                 @Override
-                public void onSuccess(Lenguages value) {
-               //     mainActivity.setTextView( String.valueOf(value));
-                    logger.log("onSuccess.value" + String.valueOf(value));
+                public void onSuccess(Lenguage value) {
+               //        mainActivity.setTextView(String.valueOf(value.getLs()));
+                       logger.logI(MainPresenter.class ,constans.json+ String.valueOf(value.getLs()));
                 }
+
                 @Override
                 public void onError() {
-                    logger.log("onError" + "onError");
+                    //          mainActivity.setTextView("onError");
+                    logger.logI(MainPresenter.class , constans.error);
                 }
-            }, Lenguages.class);
+
+                @Override
+                public void onFailure() {
+                    //       mainActivity.setTextView(error);
+                    logger.logI(MainPresenter.class , constans.error);
+                }
+            }, Lenguage.class);
         } catch (Exception e) {
-            logger.log(getClass().getSimpleName() + "loadPba - " + e.getMessage());
-         //  mainActivity.setTextView( String.valueOf(e.getMessage()));
+            logger.logI(MainPresenter.class ,e.getMessage());
+            //  mainActivity.setTextView( String.valueOf(e.getMessage()));
         }
     }
 

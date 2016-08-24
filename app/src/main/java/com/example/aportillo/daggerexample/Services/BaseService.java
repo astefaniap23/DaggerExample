@@ -9,7 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BaseService {
 
-    private String baseUrl="https://api.myjson.com/bins/";
+   // private String baseUrl="https://api.myjson.com/bins/";
+    private String baseUrl="http://192.168.0.134:9080/WController/mobile/quoter/";
     private Retrofit retrofit;
 
     Gson gson = new GsonBuilder()
@@ -20,7 +21,7 @@ public class BaseService {
     public BaseService() {
         this.retrofit = new Retrofit.Builder()
                 .baseUrl(this.baseUrl)
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
 

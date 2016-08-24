@@ -2,14 +2,11 @@ package com.example.aportillo.daggerexample.Util;
 
 import android.util.Log;
 
-import javax.inject.Inject;
-
 /**
  * Created by aportillo on 22/08/2016.
  */
 public class Logger {
 
-    @Inject
     public Logger() {
     }
 
@@ -17,6 +14,19 @@ public class Logger {
 
     public void log(String text) {
         Log.d(TAG, text);
+    }
+
+    public void logE (Class nameClas,String msg){
+        Log.e(nameClas.getSimpleName(),msg);
+    }
+    public void logI (Class nameClas,String msg){
+        Log.i(nameClas.getSimpleName(),msg);
+    }
+    public void logV (Class nameClas,String msg){
+        Log.v(nameClas.getSimpleName(),msg);
+    }
+    public void logW (Class nameClas,String msg){
+        Log.w(nameClas.getSimpleName(),msg);
     }
 
 }

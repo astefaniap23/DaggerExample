@@ -7,32 +7,31 @@ import java.util.ArrayList;
 /**
  * Created by aportillo on 18/08/2016.
  */
-public class Lenguages {
+public class Lenguage {
 
     @SerializedName("ls")
-    private ArrayList ls;
-
-    @SerializedName("message")
+    private ArrayList<Ls> ls;
+   /* @SerializedName("message")
     private String message;
     @SerializedName("response_code")
-    private int responseCode;
+    private int responseCode;*/
 
-    public Lenguages(String message, int responseCode, ArrayList ls){
+    public Lenguage(/*String message, int responseCode,*/ ArrayList ls){
 
         this.ls = ls;
-        this.message = message;
-        this.responseCode = responseCode;
+     /*  this.message = message;
+        this.responseCode = responseCode;*/
     }
 
-    public ArrayList getLs() {
+    public ArrayList<Ls> getLs() {
         return ls;
     }
 
-    public void setLs(ArrayList ls) {
+    public void setLs(ArrayList<Ls>  ls) {
         this.ls = ls;
     }
 
-    public String getMessage() {
+  /*  public String getMessage() {
         return message;
     }
 
@@ -46,5 +45,5 @@ public class Lenguages {
 
     public void setResponseCode(int responseCode) {
         this.responseCode = responseCode;
-    }
+    }*/
 }
