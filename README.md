@@ -4,7 +4,7 @@ Example Android Application with Dagger 2 + Retrofit  + MVP
 Alba Portillo
 
 
-#Documentation Dagger
+#Dagger Documentation 
 
 http://square.github.io/dagger/
 http://www.vogella.com/tutorials/Dagger/article.html
@@ -15,16 +15,19 @@ http://katade.com/dagger-2-inyeccion-de-dependencias-en-android-22/
 https://www.beeva.com/beeva-view/tecnologia/inyeccion-dependencias-android-dagger-2/
 http://www.javamexico.org/blogs/oscarryz/dagger_2
 
-#Documentation MVP
+#Retrofit Documentarion 
+
+https://futurestud.io/blog/retrofit-getting-started-and-android-client
+http://square.github.io/retrofit/
+https://square.github.io/retrofit/2.x/retrofit/
+https://github.com/square/retrofit
+
+#MVP Documentation 
 
 https://github.com/googlesamples/android-architecture
 https://github.com/konmik/konmik.github.io/wiki/Introduction-to-Model-View-Presenter-on-Android
 http://www.limecreativelabs.com/mvp-android/
 
-#Retrofit Documentarion 
 
-http://square.github.io/retrofit/
-https://square.github.io/retrofit/2.x/retrofit/
-https://github.com/square/retrofit
 
 Venezuela, Caracas. 25/08/16
