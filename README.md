@@ -1,5 +1,6 @@
 # DaggerExample
 Example Android Application with Dagger 2 + Retrofit  + MVP
+(Practice staff to learn about this)
 
 #Documentation Dagger
 
@@ -23,3 +24,5 @@ http://www.limecreativelabs.com/mvp-android/
 http://square.github.io/retrofit/
 https://square.github.io/retrofit/2.x/retrofit/
 https://github.com/square/retrofit
+
+Venezuela, Caracas. 25/08/16
