@@ -1,6 +1,8 @@
 # DaggerExample
 Example Android Application with Dagger 2 + Retrofit  + MVP
 (Practice staff to learn about this)
+Alba Portillo
+
 
 #Documentation Dagger
 
