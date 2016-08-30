@@ -12,7 +12,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BaseService extends Application {
 
     private String baseUrl="https://api.myjson.com/bins/";
-   // private String baseUrl="http://192.168.0.134:9080/WController/mobile/quoter/";
     private Retrofit retrofit;
 
     Gson gson = new GsonBuilder()

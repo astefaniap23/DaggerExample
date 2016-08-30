@@ -1,6 +1,6 @@
 package com.example.aportillo.daggerexample.Component;
 
-import com.example.aportillo.daggerexample.Models.LoggerModule;
+import com.example.aportillo.daggerexample.Models.Util.LoggerModule;
 import com.example.aportillo.daggerexample.Services.ServiceGenerator;
 
 import javax.inject.Singleton;

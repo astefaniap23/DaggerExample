@@ -1,9 +1,10 @@
 package com.example.aportillo.daggerexample.Services;
 
+
 import com.example.aportillo.daggerexample.Component.DaggerLoggerComponent;
 import com.example.aportillo.daggerexample.Models.Lenguages.Lenguage;
-import com.example.aportillo.daggerexample.Models.LoggerModule;
 import com.example.aportillo.daggerexample.Models.ServiceInterface;
+import com.example.aportillo.daggerexample.Models.Util.LoggerModule;
 import com.example.aportillo.daggerexample.Util.Logger;
 import com.google.gson.Gson;
 
@@ -20,9 +21,8 @@ public class ServiceGenerator extends BaseService {
     @Inject
     Logger logger;
 
-
     public ServiceGenerator() {
-       DaggerLoggerComponent.builder().loggerModule(new LoggerModule()).build().inject(this);
+        DaggerLoggerComponent.builder().loggerModule(new LoggerModule()).build().inject(this);
     }
 
     /**
@@ -32,17 +32,17 @@ public class ServiceGenerator extends BaseService {
      * @param serviceInterface
      */
     public void response(Call<Lenguage> call, final ServiceInterface serviceInterface) {
-       call.enqueue(new Callback<Lenguage>() {
+        call.enqueue(new Callback<Lenguage>() {
 
             @Override
             public void onResponse(Call<Lenguage> call, retrofit2.Response<Lenguage> response) {
                 try {
                     String gsonResponse = new Gson().toJson(response.body());
                     if (response.isSuccessful()) {
-                        logger.logE(ServiceGenerator.class,  gsonResponse);
+                        logger.logI(ServiceGenerator.class, gsonResponse);
                         serviceInterface.onSuccess(response.body());
                     } else {
-                        logger.logE(ServiceGenerator.class, gsonResponse);
+                        logger.logI(ServiceGenerator.class, gsonResponse);
                         serviceInterface.onError();
                     }
                 } catch (Exception e) {
@@ -54,7 +54,7 @@ public class ServiceGenerator extends BaseService {
 
             @Override
             public void onFailure(Call<Lenguage> call, Throwable t) {
-                   logger.logE(ServiceGenerator.class,  t.getMessage());
+                logger.logE(ServiceGenerator.class, t.getMessage());
                 serviceInterface.onFailure();
             }
         });

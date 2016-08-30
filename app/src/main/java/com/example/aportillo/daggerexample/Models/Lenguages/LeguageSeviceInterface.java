@@ -9,6 +9,5 @@ import retrofit2.http.GET;
 public interface LeguageSeviceInterface {
 
     @GET("3rorv")
-   // @GET("FreeMobileServices?command=locale")
     Call<Lenguage> getLenguages();
 }

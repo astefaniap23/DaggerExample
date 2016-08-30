@@ -40,7 +40,7 @@ public class MainModule {
 
     @Provides
     @Singleton
-    Logger providerLogger(){
+    Logger providerLogger() {
         Logger logger = new Logger();
         return logger;
     }

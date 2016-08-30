@@ -47,24 +47,22 @@ public class MainPresenter implements MainPresenterInterface {
             lenguagesServices.getLenguageServicesI(new ServiceInterface<Lenguage>() {
                 @Override
                 public void onSuccess(Lenguage value) {
-                //    mainActivity.setTextView(String.valueOf(value.getLs()));
-                    logger.logI(MainPresenter.class, constans.json + String.valueOf(value.getLs()));
+                  //  mainActivity.setTextView(String.valueOf(value.getLs()));
+                    logger.logI(MainPresenter.class, "Json" + String.valueOf(value.getLs()));
                 }
 
                 @Override
                 public void onError() {
-              //      mainActivity.setTextView("onError");
-                    logger.logI(MainPresenter.class, constans.error);
+                    logger.logI(MainPresenter.class,"Error");
                 }
 
                 @Override
                 public void onFailure() {
-             //       mainActivity.setTextView("onError");
-                    logger.logI(MainPresenter.class, constans.error);
+                    logger.logI(MainPresenter.class, "Error");
                 }
             }, Lenguage.class);
         } catch (Exception e) {
-            logger.logI(MainPresenter.class, e.getMessage());
+            logger.logE(MainPresenter.class, e.getMessage());
             mainActivity.setTextView(String.valueOf(e.getMessage()));
         }
     }
