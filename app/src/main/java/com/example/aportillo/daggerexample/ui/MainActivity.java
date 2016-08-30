@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.example.aportillo.daggerexample.Models.Main.MainInterface;
 import com.example.aportillo.daggerexample.Presenter.MainPresenter;
 import com.example.aportillo.daggerexample.R;
+import com.example.aportillo.daggerexample.Util.Logger;
 
 import javax.inject.Inject;
 
@@ -19,6 +20,9 @@ import butterknife.InjectView;
  * Created by aportillo on 18/08/2016.
  */
 public class MainActivity extends BaseActivity implements MainInterface {
+
+    @Inject
+    Logger logger;
 
     @InjectView(R.id.button)
     Button button;
@@ -41,6 +45,7 @@ public class MainActivity extends BaseActivity implements MainInterface {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                logger.log("CLICK");
                 loadLenguages();
             }
         });

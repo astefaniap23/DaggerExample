@@ -1,16 +1,26 @@
 package com.example.aportillo.daggerexample.Models;
 
+import com.example.aportillo.daggerexample.Util.Logger;
+
+import javax.inject.Singleton;
+
+import dagger.Module;
+import dagger.Provides;
+
 /**
  * Created by aportillo on 24/08/2016.
  */
-/*@Module
+@Module
 public class LoggerModule {
 
+    public LoggerModule() {
+    }
 
     @Provides
+    @Singleton
     Logger provideLogger(){
         return new Logger();
     }
 
 
-}*/
+}

@@ -1,16 +1,18 @@
 package com.example.aportillo.daggerexample.Services;
 
 
+import android.app.Application;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class BaseService {
+public class BaseService extends Application {
 
-   // private String baseUrl="https://api.myjson.com/bins/";
-    private String baseUrl="http://192.168.0.134:9080/WController/mobile/quoter/";
+    private String baseUrl="https://api.myjson.com/bins/";
+   // private String baseUrl="http://192.168.0.134:9080/WController/mobile/quoter/";
     private Retrofit retrofit;
 
     Gson gson = new GsonBuilder()

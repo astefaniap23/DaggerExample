@@ -14,10 +14,9 @@ import dagger.Component;
  */
 
 @Singleton
-@Component(modules = {SystemModule.class, MainModule.class/*, ServiceGeneratorModule.class*/})
+@Component(modules = {SystemModule.class, MainModule.class})
 public interface SystemComponent {
 
-   void inject(MainActivity activity);
+    void inject(MainActivity activity);
 
-   /*ServiceGenerator serviceGenerator();*/
-   }
+}
